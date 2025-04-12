@@ -1,5 +1,339 @@
 <header>
+  `index.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Girlfriend?</h1>
+        <button id="yesButton">Yes, I Do!</button>
+        <button id="noButton" style="display: none;">No, Leave Me Alone</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
 
+#### `date.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Date</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Schedule a Date</h1>
+        <label for="date">Choose a date:</label>
+        <input type="date" id="date" required>
+        
+        <h2>Select a time:</h2>
+        <div class="time-options">
+            <label><input type="radio" name="time" value="Pizza"> Pizza</label>
+            <label><input type="radio" name="time" value="London"> London</label>
+            <label><input type="radio" name="time" value="Movie"> Movie</label>
+        </div>
+        
+        <button id="continueButton">Continue</button>
+    </div>
+    <script>
+        document.getElementById('continueButton').onclick = function() {
+            const date = document.getElementById('date').value;
+            const selectedOption = document.querySelector('input[name="time"]:checked');
+            if (date && selectedOption) {
+                localStorage.setItem('date', date);
+                localStorage.setItem('time', selectedOption.value);
+                window.location.href = 'schedule.html';
+            } else {
+                alert('Please select a date and a time option.');
+            }
+        };
+    </script>
+</body>
+</html>
+```
+
+#### `schedule.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Date Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Date Schedule</h1>
+        <div class="card">
+            <h2>Date: <span id="dateDisplay"></span></h2>
+            <h2>Activity: <span id="timeDisplay"></span></h2>
+        </div>
+    </div>
+    <script>
+        document.getElementById('dateDisplay').innerText = localStorage.getItem('date');
+        document.getElementById('timeDisplay').innerText = localStorage.getItem('time');
+    </script>
+</body>
+</html>
+```
+
+### 2. CSS Styles
+
+Create a `styles.css` file for styling your website.
+
+```css
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffccff;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 50px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff66b2;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff3385;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+```
+
+### 3. JavaScript Functionality
+
+Create a `script.js` file for theCreating a romantic-themed website to ask someone to be your girlfriend is a sweet idea! Below is a simple HTML, CSS, and JavaScript code structure for your website. This code includes three pages as you described, with the specified features.
+
+### 1. HTML Structure
+
+Create three HTML files: `index.html`, `date.html`, and `schedule.html`.
+
+#### `index.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Girlfriend?</h1>
+        <button id="yesButton">Yes, I Do!</button>
+        <button id="noButton" style="display: none;">No, Leave Me Alone</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+#### `date.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Date</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Schedule a Date</h1>
+        <label for="date">Choose a date:</label>
+        <input type="date" id="date" required>
+        
+        <h2>Select a time:</h2>
+        <div class="time-options">
+            <label><input type="radio" name="time" value="Pizza"> Pizza</label>
+            <label><input type="radio" name="time" value="London"> London</label>
+            <label><input type="radio" name="time" value="Movie"> Movie</label>
+        </div>
+        
+        <button id="continueButton">Continue</button>
+    </div>
+    <script>
+        document.getElementById('continueButton').onclick = function() {
+            const date = document.getElementById('date').value;
+            const selectedOption = document.querySelector('input[name="time"]:checked');
+            if (date && selectedOption) {
+                localStorage.setItem('date', date);
+                localStorage.setItem('time', selectedOption.value);
+                window.location.href = 'schedule.html';
+            } else {
+                alert('Please select a date and a time option.');
+            }
+        };
+    </script>
+</body>
+</html>
+```
+
+#### `schedule.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Date Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Date Schedule</h1>
+        <div class="card">
+            <h2>Date: <span id="dateDisplay"></span></h2>
+            <h2>Activity: <span id="timeDisplay"></span></h2>
+        </div>
+    </div>
+    <script>
+        document.getElementById('dateDisplay').innerText = localStorage.getItem('date');
+        document.getElementById('timeDisplay').innerText = localStorage.getItem('time');
+    </script>
+</body>
+</html>
+```
+
+### 2. CSS Styles
+
+Create a `styles.css` file for styling your website.
+
+```css
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffccff;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 50px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff66b2;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff3385;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+```
+
+### 3. JavaScript Functionality
+
+Create a `script.js` file for the<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Date Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Date Schedule</h1>
+        <div class="card">
+            <h2>Date: <span id="dateDisplay"></span></h2>
+            <h2>Activity: <span id="timeDisplay"></span></h2>
+        </div>
+    </div>
+    <script>
+        document.getElementById('dateDisplay').innerText = localStorage.getItem('date');
+        document.getElementById('timeDisplay').innerText = localStorage.getItem('time');
+    </script>
+</body>
+</html>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #ffccff;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 50px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff66b2;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff3385;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 <!--
   <<< Author notes: Course header >>>
   Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
